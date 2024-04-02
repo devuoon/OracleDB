@@ -1,0 +1,41 @@
+{
+	"folders": {},
+	"connections": {
+		"oracle_thin-18e9ccc0c90-290e7f6330398ee0": {
+			"provider": "oracle",
+			"driver": "oracle_thin",
+			"name": "Oracle",
+			"save-password": true,
+			"configuration": {
+				"database": "XE",
+				"url": "jdbc:oracle:thin:@(DESCRIPTION \u003d (ADDRESS \u003d (PROTOCOL \u003d TCP)(HOST \u003d DESKTOP-M6ERIMA)(PORT \u003d 1521)) (CONNECT_DATA \u003d (SERVER \u003d DEDICATED) (SERVICE_NAME \u003d XE) ) )",
+				"configurationType": "MANUAL",
+				"home": "C:\\app\\PKNU\\product\\21c\\dbhomeXE",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"provider-properties": {
+					"@dbeaver-connection-type@": "TNS",
+					"@dbeaver-tns-path@": "C:\\app\\PKNU\\product\\21c\\homes\\OraDB21Home1\\network\\admin",
+					"@dbeaver-sid-service@": "SERVICE"
+				},
+				"auth-model": "oracle_native"
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"smart-commit": false,
+			"smart-commit-recover": false,
+			"auto-close-transactions": true,
+			"close-transactions-period": 1800,
+			"auto-close-connections": true,
+			"close-connections-period": 14400
+		}
+	}
+}
