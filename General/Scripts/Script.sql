@@ -31,3 +31,23 @@ SELECT * FROM emp ORDER BY SAL;
 SELECT * FROM emp ORDER BY EMPNO; 
 -- SAL 기준으로 내림차순 정렬
 SELECT * FROM emp ORDER BY SAL DESC;
+
+-- 조건을 추가하는 WHERE절
+SELECT * FROM emp WHERE EMPNO = 7839;
+
+-- 사번 7689인 사원명과 업무, 급여 출력
+SELECT ENAME, JOB, SAL FROM emp WHERE EMPNO = 7698;
+
+-- SMITH의 사원명 부서 월급 출력
+SELECT JOB, DEPTNO, SAL FROM emp WHERE ENAME = 'SMITH';
+
+SELECT * FROM emp WHERE SAL = 3000;
+-- 조건이 아닌 것만 출력
+SELECT * FROM emp WHERE SAL != 3000;
+SELECT * FROM emp WHERE SAL ^= 3000;
+SELECT * FROM emp WHERE SAL <> 5000;
+SELECT * FROM emp WHERE NOT SAL = 6000;
+
+SELECT * FROM emp WHERE ENAME >= 'M';		-- 첫글자가 'M'과 같거나 큰 문자열 출력
+
+
