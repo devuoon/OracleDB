@@ -80,4 +80,10 @@ SELECT ENAME, HIREDATE, SAL, EMPNO FROM emp WHERE (JOB = 'MANAGER' OR JOB = 'SAL
 -- 와일드카드 
 SELECT * FROM emp WHERE ENAME LIKE 'S%'; 		-- 첫 글자가 'S'인 문자열 출력
 SELECT * FROM emp WHERE ENAME LIKE '_L%';		-- 두번째글자가 'L'인 문자열 출력 
--- 사원이름 중에 
+-- 1.사원이름 중에 'S'가 포함되지 않는 부서번호 20인 사원의 이름, 부서번호 조회
+SELECT ENAME, DEPTNO FROM emp WHERE ENAME NOT LIKE '%S%' AND DEPTNO = '20';
+-- 2.1981.6.1 ~ 1981.12.31 입사자 중 부서명이 30인 사원의 부서번호, 사원명, 직업, 입사일 출력  
+SELECT DEPTNO, ENAME, JOB, HIREDATE 
+FROM EMP 
+WHERE DEPTNO = '30' AND HIREDATE BETWEEN '19810601' AND '19811231'
+ORDER BY HIREDATE;
