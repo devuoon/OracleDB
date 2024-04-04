@@ -83,7 +83,18 @@ SELECT * FROM emp WHERE ENAME LIKE '_L%';		-- 두번째글자가 'L'인 문자�
 -- 1.사원이름 중에 'S'가 포함되지 않는 부서번호 20인 사원의 이름, 부서번호 조회
 SELECT ENAME, DEPTNO FROM emp WHERE ENAME NOT LIKE '%S%' AND DEPTNO = '20';
 -- 2.1981.6.1 ~ 1981.12.31 입사자 중 부서명이 30인 사원의 부서번호, 사원명, 직업, 입사일 출력  
-SELECT DEPTNO, ENAME, JOB, HIREDATE 
-FROM EMP 
-WHERE DEPTNO = '30' AND HIREDATE BETWEEN '19810601' AND '19811231'
-ORDER BY HIREDATE;
+SELECT DEPTNO, ENAME, JOB, HIREDATE FROM EMP WHERE DEPTNO = '30' AND HIREDATE BETWEEN '19810601' AND '19811231'ORDER BY HIREDATE;
+
+--사원 이름중에 A와 E가 있는 사원을 조회
+SELECT ENAME FROM emp WHERE ENAME LIKE '%A%' AND ENAME LIKE '%E%';
+
+SELECT * FROM emp WHERE comm = NULL;			-- null은 비교연산을 사용할 수 없다.
+SELECT ENAME, SAL, SAL * 12 + COMM, COMM FROM emp;
+SELECT * FROM emp WHERE COMM IS NOT NULL;		-- null인 열을 찾는다.
+
+-- 사수가 있는 사원출력
+SELECT * FROM emp WHERE MGR IS NOT NULL;
+-- 수당에서 0을 제외한 사원 조회
+SELECT * FROM emp WHERE COMM IS NULL OR COMM != 0;
+SELECT * FROM emp WHERE COMM IS NULL AND COMM != 0;
+
