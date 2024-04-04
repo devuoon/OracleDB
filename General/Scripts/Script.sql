@@ -67,3 +67,4 @@ SELECT '970528-',
     RPAD('970528-', 15, '*') AS RPAD1,
     RPAD('010-1234-', 13,'*') AS RPAD2
 FROM dual;
+
