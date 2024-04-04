@@ -35,6 +35,13 @@ SELECT LENGTH('오라클'), LENGTHB('오라클') FROM dual;		-- LENGTH:문자길
 -- 문자열 일부를 추출 substr 함수
 SELECT SUBSTR(JOB, 1, 2), SUBSTR(JOB, 3, 2), SUBSTR(JOB, 5) FROM emp; 
 
+-- substr 함수를 사용해서 모든 사원의 이름을 세번째부터 출력
+SELECT ENAME, SUBSTR(ENAME,3) AS "세번째글자부터" FROM emp;
 
+-- 특정문자 위치를 찾는 INSTR 함수
+SELECT instr('HELLO, ORACLE', 'L') AS INSTR1, 			-- 전체에서 찾기
+		instr('HELLO, ORACLE', 'L',5) AS INSTR2,		-- 5번째 문자부터 찾기
+		instr('HELLO, ORACLE', 'L',2, 2) AS INSTR3		-- 2번째 문자부터 길이
+FROM dual;
 
 
