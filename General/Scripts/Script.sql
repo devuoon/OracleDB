@@ -68,3 +68,13 @@ SELECT '970528-',
     RPAD('010-1234-', 13,'*') AS RPAD2
 FROM dual;
 
+-- 특정문자를 지우는 TRIM, LTRIM, RTRIM 함수
+SELECT '[' || TRIM(' __Oracle__') || ']' AS TRIM,		-- 앞뒤 공백 삭제
+	'[' || TRIM(LEADING FROM '__Oracle__') || ']' AS TRIM_LEADING, 
+	'[' || TRIM(TRAILING FROM '__Oracle__') || ']' AS TRIM_TRAILING,
+	'[' || TRIM(BOTH FROM '__Oracle__') || ']' AS TRIM_BOTH
+FROM dual;
+
+-- 반올림 함수 ROUND
+
+
