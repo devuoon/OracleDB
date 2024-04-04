@@ -44,4 +44,26 @@ SELECT instr('HELLO, ORACLE', 'L') AS INSTR1, 			-- 전체에서 찾기
 		instr('HELLO, ORACLE', 'L',2, 2) AS INSTR3		-- 2번째 문자부터 길이
 FROM dual;
 
+-- 사원정보에서 s를 포함한 데이터 출력
+SELECT * FROM EMP WHERE INSTR(ENAME,'S') > 0;
+SELECT * FROM emp WHERE ENAME LIKE '%S%';
 
+-- 문자변환 REPLACE 함수
+SELECT '010-1234-5678' AS RELACE1,
+	REPLACE('010-1234-5678', '-',' ') AS REPLACE2,		-- REPLACE (문자열, 찾는문자(필수), 대체문자(선택))
+	REPLACE('010-1234-5678', '-') AS REPLACE3 
+FROM dual;
+
+-- 빈공간 메우는 LPAD, RPAD 함수
+SELECT 'Oracle',
+	LPAD('Oracle', 0, '#') AS LPAD1,					-- LPAD(문자열, 전체자리수, 빈자리채울문자)
+	RPAD('Oracle', 10, '*') AS RPAD1,
+	LPAD('Oracle', 10) AS LPAD2,
+	RPAD('Oracle', 10) AS RPAD2
+FROM dual;
+
+-- 주민번호, 전화번호 끝 7자리, 4자리 처리
+SELECT '970528-',
+    RPAD('970528-', 15, '*') AS RPAD1,
+    RPAD('010-1234-', 13,'*') AS RPAD2
+FROM dual;
