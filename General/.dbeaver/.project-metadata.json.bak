@@ -1,1 +1,1 @@
-{"resources":{"Scripts/tableCreate.sql":{"default-schema":"ADAM","default-datasource":"oracle_thin-18e9ccc0c90-290e7f6330398ee0"}}}
+{"resources":{"Scripts/select.sql":{"default-schema":"ADAM","default-datasource":"oracle_thin-18e9ccc0c90-290e7f6330398ee0"},"Scripts/tableCreate.sql":{"default-schema":"ADAM","default-datasource":"oracle_thin-18e9ccc0c90-290e7f6330398ee0"}}}
