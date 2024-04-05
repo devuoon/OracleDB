@@ -156,7 +156,15 @@ GROUP BY DEPTNO
 HAVING COUNT(DEPTNO) > 4;
 
 -- 2. EMP 테이블에서 가장 많은 사원이 속해있는 부서번호와 사원수를 출력
-
+SELECT DEPTNO, COUNT(*) E_COUNT
+FROM EMP
+GROUP BY DEPTNO
+HAVING COUNT(*) = (
+    SELECT MAX(COUNT(*))
+    FROM EMP 
+    GROUP BY DEPTNO
+)
+ORDER BY COUNT(*) DESC;
 
 -- 3. EMP 테이블에서 가장 많은 사원을 갖는 MGR의 사원번호를 출력
 SELECT MAX(MGR) 
