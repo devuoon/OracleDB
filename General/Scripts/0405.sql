@@ -139,5 +139,39 @@ SELECT * FROM (
 )
 WHERE ROWNUM BETWEEN 1 AND 5;
 
+--SCOTT 보다 높은 급여를 받는 사원 출력
+SELECT *
+FROM EMP e 
+WHERE SAL > (SELECT SAL FROM EMP WHERE ENAME ='SCOTT');
+
+-- 'ALLEN'의 추가수장보다 높은 추가수당을 받는 사원 출력
+SELECT *
+FROM EMP e 
+WHERE COMM > (SELECT COMM FROM EMP WHERE ENAME ='ALLEN');
+
+-- 1. EMP 테이블에서 부서 인원이 4명보다 많은 부서의 부서번호, 인원수, 급여의 합을 출력
+SELECT DEPTNO "부서번호", COUNT(DEPTNO) "인원수",SUM(SAL) "급여의 합" 
+FROM EMP e 
+GROUP BY DEPTNO 
+HAVING COUNT(DEPTNO) > 4;
+
+-- 2. EMP 테이블에서 가장 많은 사원이 속해있는 부서번호와 사원수를 출력
+
+
+-- 3. EMP 테이블에서 가장 많은 사원을 갖는 MGR의 사원번호를 출력
+SELECT MAX(MGR) 
+FROM EMP
+WHERE ROWNUM = 1
+GROUP BY MGR 
+ORDER BY COUNT(*) DESC;
+
+
+-- 4. EMP 테이블에서 부서번호가 10인 사원수와 30인 사원수를 각각 출력
+SELECT DEPTNO, COUNT(*)
+FROM EMP
+WHERE DEPTNO IN (10,30) 
+GROUP BY DEPTNO
+ORDER BY DEPTNO;
+
 
 
