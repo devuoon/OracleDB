@@ -30,5 +30,11 @@ SELECT * FROM EMP WHERE ROWNUM <= 5;
 -- 다중함수(집계함수) : SUM, MIN, MAX, COUNT, AVG
 SELECT * FROM emp;
 SELECT COUNT(ENAME) FROM emp;
-SELECT COMM FROM emp;
+SELECT COUNT(COMM) FROM emp;				-- NULL은 제외
+SELECT COUNT(ENAME) FROM emp WHERE DEPTNO = 30;
+SELECT SUM(COMM) FROM emp;
+SELECT SUM(DISTINCT SAL),					-- 중복제거 
+		SUM(ALL SAL),						-- 중복포함 전체
+		SUM(SAL)							-- 중복포함 전체
+FROM emp;
 
