@@ -173,7 +173,6 @@ WHERE ROWNUM = 1
 GROUP BY MGR 
 ORDER BY COUNT(*) DESC;
 
-
 -- 4. EMP 테이블에서 부서번호가 10인 사원수와 30인 사원수를 각각 출력
 SELECT DEPTNO, COUNT(*)
 FROM EMP
